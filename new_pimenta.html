@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Pimenta Core - Global Trade & Tech</title>
+    
+    <meta name="description" content="Pimenta Core is the all-in-one platform for import-export businesses, built by industry experts. Manage inventory, replace your paper chopada, and get expert spice trading services.">
+    <meta name="keywords" content="import export software, trade management, chopada software, digital ledger, godown inventory management, spice trading, Pimenta Core">
+    
+    <meta property="og:title" content="Pimenta Core - The Digital Core for Global Trade">
+    <meta property="og:description" content="We're building the modern software platform to manage your entire import-export business, built by traders, for traders. Join the waitlist.">
+    <meta property="og:image" content="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"> <meta property="og:url" content="https://www.pimentacore.com"> <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Simple modal visibility */
+        .modal-hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800">
+
+    <!-- Header / Navigation -->
+    <nav class="sticky top-0 z-50 w-full bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center">
+                    <!-- UPDATED LOGO TEXT & COLORS -->
+                    <!-- <img src="https://img.icons8.com/fluency/48/000000/chili-pepper.png" alt="Pimenta Core Logo" class="h-8 w-8 mr-2"> -->
+                    <img src="./logo.svg" alt="Pimenta Core Logo" class="h-9 w-9 mr-3">
+                    <span class="text-3xl font-extrabold"><span class="text-red-700">Pimenta</span><span class="text-slate-800">Core</span></span>
+                </a>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#platform" class="text-slate-600 hover:text-red-700 font-medium">Our Platform</a>
+                    <a href="#trading" class="text-slate-600 hover:text-red-700 font-medium">Spice Trading</a>
+                    <a href="#about" class="text-slate-600 hover:text-red-700 font-medium">About Us</a>
+                    <a href="#waitlist-modal" onclick="openModal(event)" class="px-5 py-2.5 bg-red-700 text-white font-semibold rounded-lg shadow-md hover:bg-red-800 transition duration-300">
+                        Join Waitlist
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-900 focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2">
+                <a href="#platform" class="block py-2 px-3 text-slate-600 hover:bg-slate-50 rounded-lg">Our Platform</a>
+                <a href="#trading" class="block py-2 px-3 text-slate-600 hover:bg-slate-50 rounded-lg">Spice Trading</a>
+                <a href="#about" class="block py-2 px-3 text-slate-600 hover:bg-slate-50 rounded-lg">About Us</a>
+                <a href="#waitlist-modal" onclick="openModal(event)" class="block w-full text-left mt-2 py-3 px-3 bg-red-700 text-white font-semibold rounded-lg shadow-md hover:bg-red-800 transition duration-300">
+                    Join Waitlist
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-slate-50 overflow-hidden">
+        <div class="container mx-auto px-6 py-24 md:py-32">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Hero Text -->
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                        The Digital Core for Global Trade.
+                    </h1>
+                    <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-lg mx-auto lg:mx-0">
+                        We don't just trade spices. We're building the modern software platform to manage your <b>entire</b> import-export business.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#waitlist-modal" onclick="openModal(event)" class="px-8 py-4 bg-red-700 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-red-800 transition duration-300 transform hover:-translate-y-1">
+                            Join the Platform Waitlist
+                        </a>
+                        <a href="#trading" class="px-8 py-4 bg-white text-slate-700 text-lg font-semibold rounded-lg shadow-lg border border-slate-300 hover:bg-slate-50 transition duration-300">
+                            Our Spice Services
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="lg:w-1/2">
+                    <!-- <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" -->
+                    <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" 
+                         alt="Pimenta Core Platform Mockup" 
+                         class="rounded-xl shadow-2xl w-full h-96 object-cover"
+                         onerror="this.src='https://placehold.co/600x450/001f3f/ffffff?text=Modern+Trade+Software'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SaaS Platform Section -->
+    <section id="platform" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-base font-semibold text-red-700 tracking-wide uppercase">For Traders, By Traders</h2>
+                <h3 class="mt-2 text-4xl md:text-5xl font-extrabold text-slate-900">
+                    The Platform You've Been Waiting For
+                </h3>
+                <p class="mt-6 text-xl text-slate-600">
+                    Tired of managing your godown on paper? Still using a <span class="font-semibold text-slate-800">chopada</span> and spreadsheets to track sales and payments? We know the frustration, so we're building the solution.
+                </p>
+            </div>
+            
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <!-- Feature 1 -->
+                <div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200">
+                    <h4 class="text-2xl font-bold text-slate-900">Godown Inventory</h4>
+                    <p class="mt-3 text-slate-600">
+                        Digitize your entire stock. Get real-time updates on inventory levels, manage multiple godowns, and stop relying on manual counts.
+                    </p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200">
+                    <h4 class="text-2xl font-bold text-slate-900">Digital Ledger & Payments</h4>
+                    <p class="mt-3 text-slate-600">
+                        Replace your paper chopada. Track every sale, purchase, and client payment in one secure, unchangeable digital ledger.
+                    </p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200">
+                    <h4 class="text-2xl font-bold text-slate-900">Secure Client CRM</h4>
+                    <p class="mt-3 text-slate-600">
+                        Keep all your client data, purchase history, and communications in one place. Secure, searchable, and always accessible.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Waitlist CTA -->
+            <div class="text-center mt-16 flex-col items-center justify-center space-y-8">
+                <a href="#waitlist-modal" onclick="openModal(event)" class="px-10 py-5 bg-red-700 text-white text-xl font-semibold rounded-lg shadow-lg hover:bg-red-800 transition duration-300 transform hover:-translate-y-1">
+                    Get Early Access
+                </a>
+                <p class="mt-4 text-slate-500">Join our waitlist for the Pimenta Core Platform (SaaS).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spice Trading Section -->
+    <section id="trading" class="py-24 bg-slate-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- UPDATED Trading Image for Trust -->
+                <div class="lg:w-1/2">
+                    <img src="https://images.pexels.com/photos/7578893/pexels-photo-7578893.jpeg" 
+                         alt="Trusted Partnership in Global Spice Trading" 
+                         class="rounded-xl shadow-2xl w-full h-96 object-cover"
+                         onerror="this.src='https://placehold.co/600x450/8B0000/ffffff?text=Trusted+Global+Trade'">
+                </div>
+                
+                <!-- Trading Text -->
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                        Our Expertise in Action
+                    </h2>
+                    <h3 class="mt-3 text-3xl font-semibold text-red-500">
+                        Global Spice Trading
+                    </h3>
+                    <p class="mt-6 text-lg text-slate-300">
+                        You need a partner who understands quality, logistics, and on-time delivery. Our global trade division specializes in sourcing and exporting the world's finest spices. We use modern principles of efficiency and transparency to ensure trust from source to destination.
+                    </p>
+                    <div class="mt-10">
+                        <a href="mailto:hp.divya.patel@gmail.com" class="px-8 py-4 bg-red-700 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-red-800 transition duration-300">
+                            Contact Our Trading Desk
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Us / About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-base font-semibold text-red-700 tracking-wide uppercase">About Pimenta Core</h2>
+                <h3 class="mt-2 text-4xl md:text-5xl font-extrabold text-slate-900">
+                    Why Trust Pimenta Core?
+                </h3>
+                <p class="mt-6 text-xl text-slate-600">
+                    Our platform isn't being built by developers in a vacuum. It's being built by seasoned traders who live the challenges of the import-export business every single day.
+                </p>
+                <p class="mt-4 text-xl text-slate-600">
+                    Our service isn't just a service. It's our real-world testbed for the technology that will soon power your business. We offer the perfect synergy of <b>traditional expertise</b> and <b>modern technology</b>.
+                </p>
+            </div>
+            
+            <!-- Trust Image -->
+            <div class="max-w-4xl mx-auto mt-16">
+                <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" 
+                     alt="Pimenta Core Team - Trust and Expertise" 
+                     class="rounded-xl shadow-2xl w-full h-auto"
+                     onerror="this.src='https:placehold.co/800x400/001f3f/ffffff?text=Trust+%26+Expertise'">
+            </div>
+
+            <!-- Meet the Team Section -->
+            <div class="mt-24">
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 text-center">
+                    Meet Our Team
+                </h3>
+                <p class="mt-4 text-lg text-slate-600 text-center max-w-2xl mx-auto">
+                    We are a blend of industry veterans and tech innovators, united by a single mission.
+                </D>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 text-center">
+                    <!-- Team Member 1 -->
+                    <div class="flex flex-col items-center">
+                        <!-- UPDATED IMAGE -->
+                        <img class="h-40 w-40 rounded-full object-cover shadow-lg" src="./formal_ceo.png" alt="Founder & CEO">
+                        <h4 class="mt-4 text-xl font-bold text-slate-900">Divya Patel</h4>
+                        <p class="text-red-700 font-medium">Founder & CEO</p>
+                        <!-- UPDATED DESCRIPTION -->
+                        <p class="mt-2 text-slate-600 text-sm">As Founder & CEO, Divya Patel leverages a lifetime of family trade experience to guide our tech-first vision, turning deep industry insight into a modern software solution.</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="flex flex-col items-center">
+                        <!-- UPDATED IMAGE -->
+                        <!-- <img class="h-40 w-40 rounded-full object-cover shadow-lg" src="https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Head of Trade"> -->
+                        <img class="h-40 w-40 rounded-full object-cover shadow-lg" src="./formal_head_of_trade1.png" alt="Head of Trade">
+                        <h4 class="mt-4 text-xl font-bold text-slate-900">Piyushbhai Patel</h4>
+                        <p class="text-red-700 font-medium">Head of Trade & Operations</p>
+                        <!-- UPDATED DESCRIPTION -->
+                        <p class="mt-2 text-slate-600 text-sm">With 20+ years of on-the-ground expertise, Piyushbhai Patel leads our global trade operations, managing complex logistics and ensuring our spice division delivers unparalleled quality.</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="flex flex-col items-center">
+                        <!-- UPDATED IMAGE -->
+                        <!-- <img class="h-40 w-40 rounded-full object-cover shadow-lg" src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=400" alt="CTO / Industry Expert"> -->
+                        <img class="h-40 w-40 rounded-full object-cover shadow-lg" src="./formal_cto.png" alt="CTO / Industry Expert">
+                        <h4 class="mt-4 text-xl font-bold text-slate-900">Pulkitbhai Patel</h4>
+                        <p class="text-red-700 font-medium">CTO / Industry Expert</p>
+                        <!-- UPDATED DESCRIPTION -->
+                        <p class="mt-2 text-slate-600 text-sm">As our CTO, Pulkitbhai Patel provides the critical industry link. With extensive experience working <b>in</b> trading firms, he guides our product strategy, ensuring we solve the real-world problems that traders actually face.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: Testimonials Section -->
+            <div class="mt-24">
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 text-center">
+                    What the Industry is Saying
+                </h3>
+                <p class="mt-4 text-lg text-slate-600 text-center max-w-2xl mx-auto">
+                    We're building our platform based on real-world feedback from industry experts.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200">
+                        <p class="text-lg text-slate-700 italic">"As a trader with 30 years in the business, the shift from paper chopadas to a digital system is long overdue. This is the solution we've been waiting for."</p>
+                        <p class="mt-4 font-semibold text-slate-900">— A 30-Year Trade Veteran</p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200">
+                        <!-- <p class="text-lg text-slate-700 italic">"Managing inventory across multiple godowns is our biggest daily challenge. A real-time platform built by someone who understands the industry will be a game-changer."</p> -->
+                        <p class="text-lg text-slate-700 italic">"Multi-godown inventory tracking is our daily challenge. A specialized platform will transform our operations."</p>
+                        <p class="mt-4 font-semibold text-slate-900">— S. Sharma, Export Manager</p>
+                    </div>
+                    
+                    <!-- Testimonial 3 (UPDATED) -->
+                    <!-- <div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200">
+                        <p class="text-lg text-slate-700 italic">"Billing software only tracks what's on the invoice. Our biggest headache is managing the *unbilled* stock in the godown and the daily cash flow. A system to manage this internal flow is desperately needed."</p>
+                        <p class="mt-4 font-semibold text-slate-900">— A General Manager, Trading Co.</p>
+                    </div> -->
+                    <!-- Testimonial 3 (SIMPLIFIED) -->
+                    <div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200">
+                        <!-- <p class="text-lg text-slate-700 italic">"Managing stock and daily operations is complex. </a>A platform that tracks inventory, payments, and client details in one place would save us hours and reduce mistakes."</p> -->
+                        <p class="text-lg text-slate-700 italic">"We need an all-in-one system for inventory, payments, and client management to optimize our workflow."</p>
+                        <p class="mt-4 font-semibold text-slate-900">— A General Manager, Trading Co.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Testimonials Section -->
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 border-t border-slate-200">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- Logo and Copyright -->
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <a href="#home" class="flex justify-center md:justify-start">
+                        <!-- UPDATED LOGO TEXT & COLORS -->
+                        <img src="./logo.svg" alt="Pimenta Core Logo" class="h-8 w-8 mr-3">
+                        <span class="text-2xl font-bold"><span class="text-red-700">Pimenta</span><span class="text-slate-800">Core</span></span>
+                    </a>
+                    <p class="mt-2 text-sm text-slate-500">
+                        &copy; 2025 Pimenta Core. All rights reserved.
+                    </p>
+                </div>
+                
+                <!-- Social Links (FIXED) -->
+                <div class="flex items-center space-x-6"></div>
+                    <div class="flex items-center gap-2">
+                        <a href="https://linkedin.com/company/pimentacore" target="_blank" rel="noopener noreferrer" aria-label="Pimenta Core on LinkedIn" class="text-slate-500 hover:text-red-700 p-1 rounded transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 fill-current" aria-hidden="true">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8.34 18H6.06V10.5h2.28V18zM7.2 9.33c-.73 0-1.2-.5-1.2-1.13 0-.64.49-1.13 1.24-1.13s1.2.49 1.2 1.13c0 .63-.47 1.13-1.24 1.13zM18 18h-2.28v-3.9c0-.93-.33-1.56-1.15-1.56-.63 0-1.01.43-1.18.85-.06.15-.08.36-.08.57V18H11.04s.03-8.09 0-8.92h2.28v1.26c.3-.46.84-1.12 2.05-1.12 1.5 0 2.63.98 2.63 3.08V18z"/>
+                            </svg>
+                        </a>
+
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Pimenta Core on Facebook" class="text-slate-500 hover:text-red-700 p-1 rounded transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 fill-current" aria-hidden="true">
+                                <path d="M22 12a10 10 0 10-11.6 9.85v-6.97H7.9V12h2.5V9.8c0-2.47 1.47-3.82 3.72-3.82 1.08 0 2.21.2 2.21.2v2.42h-1.24c-1.22 0-1.6.76-1.6 1.54V12h2.73l-.44 2.88h-2.29v6.97A10 10 0 0022 12z"/>
+                            </svg>
+                        </a>
+
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Pimenta Core on X (Twitter)" class="text-slate-500 hover:text-red-700 p-1 rounded transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 fill-current" aria-hidden="true">
+                                <path d="M18.36 6.64a1 1 0 00-1.41 0L12 11.59 7.05 6.64A1 1 0 105.64 8.05L10.59 13l-4.95 4.95a1 1 0 101.41 1.41L12 14.41l4.95 4.95a1 1 0 001.41-1.41L13.41 13l4.95-4.95a1 1 0 000-1.41z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Waitlist Modal -->
+    <div id="waitlist-modal" class="modal-hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            
+            <!-- Overlay -->
+            <div id="modal-overlay" class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+
+            <!-- Modal panel -->
+            <div class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div id="modal-content-form">
+                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <div class="mt-3 text-center">
+                            <h3 class="text-2xl leading-6 font-bold text-slate-900" id="modal-title">
+                                Join the Early Access Waitlist
+                            </h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-slate-600">
+                                    Be the first to know when the Pimenta Core platform launches. Get early access, updates, and special introductory pricing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Waitlist Form -->
+                    <form id="waitlist-form" method="POST" action="https://formspree.io/f/xldokvrk" class="px-6 pb-6">
+                        <div class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-700">Your Name</label>
+                                <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-700">Email Address</label>
+                                <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm">
+                            </div>
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-slate-700">Business Name</label>
+                                <input type="text" name="company" id="company" class="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-300">
+                                Join Now
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Success Message -->
+                <div id="modal-content-success" class="modal-hidden p-6 text-center">
+                    <h3 class="text-2xl font-bold text-green-600">Thank You!</h3>
+                    <p class="mt-4 text-slate-700">You're on the waitlist. We'll be in touch soon with updates about the Pimenta Core platform.</p>
+                    <button onclick="closeModal()" class="mt-6 w-full py-2 px-4 rounded-lg text-slate-700 bg-slate-100 hover:bg-slate-200 font-medium">
+                        Close
+                    </button>
+                </div>
+
+                 <!-- Close Button -->
+                <button onclick="closeModal()" class="absolute top-0 right-0 mt-4 mr-4 text-slate-400 hover:text-slate-600">
+                    <span class="sr-only">Close</span>
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Modal Functions
+        const modal = document.getElementById('waitlist-modal');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalFormContent = document.getElementById('modal-content-form');
+        const modalSuccessContent = document.getElementById('modal-content-success');
+        const waitlistForm = document.getElementById('waitlist-form');
+
+        function openModal(event) {
+            event.preventDefault(); // Stop anchor link from jumping
+            modal.classList.remove('modal-hidden');
+            // Reset form
+            modalFormContent.classList.remove('modal-hidden');
+            modalSuccessContent.classList.add('modal-hidden');
+            waitlistForm.reset();
+        }
+
+        function closeModal() {
+            modal.classList.add('modal-hidden');
+        }
+
+        // Handle Real Form Submission
+        waitlistForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop page from reloading
+            
+            const formData = new FormData(waitlistForm);
+            const action = waitlistForm.getAttribute('action');
+            
+            // Check if action URL is the placeholder
+            if (action.includes('YOUR_FORMSPREE_ENDPOINT_URL_HERE')) {
+                console.warn('Formspree URL not set. Simulating success.');
+                // Simulate success for demo purposes
+                modalFormContent.classList.add('modal-hidden');
+                modalSuccessContent.classList.remove('modal-hidden');
+                return; // Stop the fetch
+            }
+            
+            fetch(action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    modalFormContent.classList.add('modal-hidden');
+                    modalSuccessContent.classList.remove('modal-hidden');
+                } else {
+                    // Handle server errors
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert('Oops! There was a problem submitting your form. Please try again.');
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                // Handle network errors
+                console.error('Fetch Error:', error);
+                alert('Oops! There was a network error. Please try again.');
+            });
+        });
+        
+        // Close modal if overlay is clicked
+        modalOverlay.addEventListener('click', closeModal);
+
+    </script>
+</body>
+</html>
+
